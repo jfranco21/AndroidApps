@@ -6,153 +6,206 @@
     android:scrollbarStyle="insideOverlay"
     android:scrollbars="vertical">
 
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/content">
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/content">
 
-    <TextView
-        android:text="Hand Crews Hourly Rate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/Rate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"/>
+        <!--Text that tells the user if they are making a new incident or editing a previously created incident-->
+        <TextView
+            android:text=""
+            android:id="@+id/NameOfActivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="32dp"/>
 
-    <TextView
-        android:text="# of People that Worked"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/NumPeople"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"/>
+        <!--The input field for the crew's hourlyt rate-->
+        <TextView
+            android:text="Hand Crews Hourly Rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"/>
 
-    <TextView
-        android:text="Did Crew Boss Attend Briefing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/CRWB"/>
+        <EditText
+            android:id="@+id/Rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"/>
 
-    <Spinner
-        android:id="@+id/briefing_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <!--The input field for the # of people that worked in the shift-->
+        <TextView
+            android:text="# of People that Worked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"/>
 
-    <TextView
-        android:text="Date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/dateInput"/>
+        <EditText
+            android:id="@+id/NumPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"/>
 
+        <!--The drop down for determining whether or not the crew boss attended the briefing-->
+        <TextView
+            android:text="Did Crew Boss Attend Briefing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/CRWB"
+            android:textColor="#000000"/>
 
-    <TableLayout
-        android:stretchColumns="*">
-        <TableRow android:layout_width="0dp">
-            <TextView android:text="On"/>
-            <TextView android:text="Off"/>
-            <TextView android:text="On" />
-            <TextView android:text="Off"/>
+        <Spinner
+            android:id="@+id/briefing_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!--The date input field for shift-->
+        <TextView
+            android:text="Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"/>
+
+        <EditText
+            android:id="@+id/dateInput"
+            android:inputType="date"
+            android:text="mm/dd/yyyy"
+            />
+
+        <!--The on/off input fields for a shift-->
+        <TableLayout
+            android:stretchColumns="*">
+            <TableRow android:layout_width="0dp">
+                <TextView
+                    android:text="On"
+                    android:textColor="#000000"/>
+                <TextView
+                    android:text="Off"
+                    android:textColor="#000000"/>
+                <TextView
+                    android:text="On"
+                    android:textColor="#000000"/>
+                <TextView
+                    android:text="Off"
+                    android:textColor="#000000"/>
+            </TableRow>
+            <TableRow android:layout_width="0dp">
+                <EditText
+                    android:id="@+id/on1"
+                    android:maxLength="4"/>
+                <EditText
+                    android:id="@+id/off1"
+                    android:maxLength="4"/>
+                <EditText
+                    android:id="@+id/on2"
+                    android:maxLength="4" />
+                <EditText
+                    android:id="@+id/off2"
+                    android:maxLength="4"/>
+            </TableRow>
+        </TableLayout>
+
+        <!--The Result, Reset, and Save entry buttons-->
+        <TableRow
+            android:gravity="center">
+            <Button
+                android:text="Result"
+                android:id="@+id/result1"/>
+            <Button
+                android:text="Reset"
+                android:id="@+id/reset"/>
+            <Button
+                android:text="Save Entry"
+                android:id="@+id/save"/>
         </TableRow>
 
-        <TableRow android:layout_width="0dp">
-            <EditText
-                android:id="@+id/on1"
-                android:maxLength="4"/>
-            <EditText
-                android:id="@+id/off1"
-                android:maxLength="4"/>
-            <EditText
-                android:id="@+id/on2"
-                android:maxLength="4"
-                />
-            <EditText
-                android:id="@+id/off2"
-                android:maxLength="4"/>
-        </TableRow>
+        <!--The input fields that will contain the shift's total cost and # of hours-->
+        <TableLayout android:stretchColumns="*">
+            <TableRow>
+                <TextView
+                    android:text="Total Hours"
+                    android:textColor="#000000"/>
+                <TextView
+                    android:text="Shift Cost"
+                    android:textColor="#000000"/>
+            </TableRow>
+            <TableRow>
+                <EditText android:id="@+id/totHours"/>
+                <EditText android:id="@+id/totCost"/>
+            </TableRow>
+        </TableLayout>
+
+        <!--Divider that separates the stuff for calculating a shift's results and the result's for the incident-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@android:color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <!--The Name of the Incident input field-->
+        <TextView
+            android:text="Name of the Incident"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#000000"/>
+
+        <EditText
+            android:id="@+id/IncidentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10" />
+
+        <!--The Fire Number input field-->
+        <TextView
+            android:text="Fire Number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#000000"/>
+
+        <EditText
+            android:id="@+id/fireNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"/>
+
+
+        <!--TableLayout that will contain all of the shift entry results-->
+        <TableLayout android:id="@+id/resultContent">
+
+        </TableLayout>
+
+
+        <TableLayout android:stretchColumns="*">
+            <!--The input fields that contain the incident's total # of hours and total cost-->
+            <TableRow>
+                <TextView
+                    android:text="Total Crew Invoice"
+                    android:gravity="center"
+                    android:textColor="#000000"/>
+                <TextView
+                    android:text="Total Hours Worked"
+                    android:gravity="center"
+                    android:textColor="#000000"/>
+            </TableRow>
+            <TableRow>
+                <EditText
+                    android:id="@+id/TotalInvoice" />
+                <EditText
+                    android:id="@+id/TotalHours" />
+            </TableRow>
+            <!--The Save button for storing an incident and the home button-->
+            <TableRow>
+                <Button android:text="Home"
+                    android:id="@+id/Home"/>
+                <Button android:text="Save Incident"
+                    android:id="@+id/SaveIncident"/>
+            </TableRow>
+        </TableLayout>
+
     </TableLayout>
-
-
-    <TableRow
-        android:gravity="center">
-        <Button
-            android:text="Result"
-            android:id="@+id/result1"/>
-        <Button
-            android:text="Reset"
-            android:id="@+id/reset"/>
-        <Button
-            android:text="Save Entry"
-            android:id="@+id/save"/>
-    </TableRow>
-
-    <TableLayout android:stretchColumns="*">
-        <TableRow>
-            <TextView
-                android:text="Total Hours"/>
-            <TextView
-                android:text="Shift Cost"/>
-        </TableRow>
-        <TableRow>
-            <EditText android:id="@+id/totHours"/>
-            <EditText android:id="@+id/totCost"/>
-        </TableRow>
-    </TableLayout>
-
-    <TextView
-        android:text="Name of the Incident"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"/>
-    <EditText
-        android:id="@+id/IncidentName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10" />
-
-    <TextView
-        android:text="Fire Number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center" />
-    <EditText
-        android:id="@+id/fireNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"/>
-
-
-    <!--this will contain all of the results that are saved-->
-    <TableLayout android:id="@+id/resultContent">
-
-    </TableLayout>
-
-    <TableLayout android:stretchColumns="*">
-        <TableRow>
-            <TextView
-                android:text="Total Crew Invoice"
-                android:gravity="center"/>
-            <TextView
-                android:text="Total Hours Worked"
-                android:gravity="center"/>
-        </TableRow>
-        <TableRow>
-            <EditText
-                android:id="@+id/TotalInvoice" />
-            <EditText
-                android:id="@+id/TotalHours" />
-        </TableRow>
-        <TableRow>
-            <Button android:text="Home"
-                android:id="@+id/Home"/>
-            <Button android:text="Save Incident"
-                android:id="@+id/SaveIncident"/>
-        </TableRow>
-    </TableLayout>
-</TableLayout>
 
 </ScrollView>

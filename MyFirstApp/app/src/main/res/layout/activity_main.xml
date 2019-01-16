@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--Text that indicates to the user that they are in the home page-->
+    <TextView
+        android:text="Home"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="32dp"/>
+
+    <!--Button for creating a new incident-->
     <Button
         android:id="@+id/NewIncident"
         android:layout_width="wrap_content"
@@ -13,15 +20,21 @@
         tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="99dp" />
 
-
+    <!--Button for editing/deleting previously created incidents-->
     <Button
         android:id="@+id/EditDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:layout_below="@id/NewIncident"
         android:text="Edit/Delete Incident"
         tools:layout_editor_absoluteX="192dp"
         tools:layout_editor_absoluteY="99dp" />
 
+    <!--F & F 2017 crew picture at Miller Conplex-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/ic_handcrew2017" />
 
-</LinearLayout>
+</TableLayout>

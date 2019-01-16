@@ -11,24 +11,26 @@
         android:layout_height="match_parent"
         android:id="@+id/new2Content">
 
-
+        <!--Text that indicates that this is the Edit/Delete Incident layout-->
         <TextView
             android:text="Edit/Delete Incident"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textSize="32dp"/>
+            android:textSize="32dp"
+            android:textStyle="bold"/>
 
-        <!--this layout contains of all the incident that the user can edit that are stored in db-->
+        <!--This TableLayout will contain all the incidents that a user can choose from to edit/delete-->
         <TableLayout
             android:id="@+id/stuff"
             android:stretchColumns="*">
         </TableLayout>
 
+        <!--The home button-->
         <Button
             android:text="Home"
             android:id="@+id/homeButton"/>
 
-
     </TableLayout>
+
 </ScrollView>

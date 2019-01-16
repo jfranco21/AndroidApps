@@ -9,19 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!--The homepage activity that the user will start at-->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewActivity"></activity>
-        <activity android:name=".EditDelete"></activity>
+
+        <!--The new incident activity-->
         <activity
-            android:name=".modify"
-            android:label="@string/title_activity_modify"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".NewActivity">
+        </activity>
+
+        <!--The edi/delete incident activity-->
+        <activity
+            android:name=".EditDelete">
+        </activity>
+
+        <!--The activity that the lets a user edit an incident-->
+        <activity
+            android:name=".modify">
+        </activity>
+
     </application>
 
 </manifest>
